@@ -31,8 +31,10 @@ class _List_solicitudesState extends State<List_solicitudes> {
       length: _con.categoria?.length,
       child: Scaffold(
         appBar: PreferredSize(
+          
           preferredSize: Size.fromHeight(100),
           child: AppBar(
+            
             automaticallyImplyLeading: false,
             backgroundColor: Color.fromRGBO(2, 48, 82, 1),
             /* leading:  */
@@ -84,8 +86,9 @@ class _List_solicitudesState extends State<List_solicitudes> {
   }
 
   Widget _cardList(Solicitud solicitud) {
+    
     return Container(
-      height: 160,
+      height: 50,
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       child: Card(
         elevation: 3.0,
@@ -97,7 +100,7 @@ class _List_solicitudesState extends State<List_solicitudes> {
               Positioned(
                 child: Container(
                   height: 30,
-                  width: 15,
+                  width: MediaQuery.of(context).size.width * 1,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(15),
@@ -108,7 +111,7 @@ class _List_solicitudesState extends State<List_solicitudes> {
                   child: Container(
                     width: double.infinity,
                     alignment: Alignment.center,
-                    child: Text('Solicitud #0',
+                    child: Text('Solicitud #2',
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.white,
@@ -138,7 +141,7 @@ class _List_solicitudesState extends State<List_solicitudes> {
                         alignment: Alignment.centerLeft,
                         margin: EdgeInsets.symmetric(vertical: 5),
                         width: double.infinity,
-                        child: Text('Apellido: Vega Vega',
+                        child: Text('Apellido: Vega Vgea',
                         style: TextStyle(
                           fontSize: 13
 
@@ -150,7 +153,7 @@ class _List_solicitudesState extends State<List_solicitudes> {
                         alignment: Alignment.centerLeft,
                         margin: EdgeInsets.symmetric(vertical: 5),
                         width: double.infinity,
-                        child: Text('codigo: 201820035',
+                        child: Text('Estado: Aceptado',
                         style: TextStyle(
                           fontSize: 13
 
@@ -166,7 +169,6 @@ class _List_solicitudesState extends State<List_solicitudes> {
       ),
     );
   }
-
   Widget _notify() {
     return Stack(
       children: [

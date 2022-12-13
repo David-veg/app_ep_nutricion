@@ -14,7 +14,7 @@ class Usuario {
   String idperson;
   String image;
   String sessionToken;
-  List<Rol> sidebar = [];
+ 
   
 
   Usuario({
@@ -25,7 +25,7 @@ class Usuario {
     this.idperson,
     this.image,
     this.sessionToken,
-    this.sidebar,
+    
   });
 
   factory Usuario.fromJson(Map<String, dynamic> json) => Usuario(
@@ -36,7 +36,7 @@ class Usuario {
         idperson: json["idperson"],
         image: json["image"],
         sessionToken: json["session_token"],
-        sidebar: json["sidebar"] == null ? [] : List<Rol>.from(json['sidebar'].map((model) => Rol.fromJson(model))) ?? [],
+        
       );
 
   Map<String, dynamic> toJson() => {

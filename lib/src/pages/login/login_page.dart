@@ -55,20 +55,21 @@ class _LoginPageState extends State<LoginPage> {
   Widget _imageBanner(){
     return Container(
       margin: EdgeInsets.only(
-          top: 100,
-          bottom: MediaQuery.of(context).size.height * 0.15
+          top: 75,
+          
       ),
       child: Image.asset(
         'assets/logos/logo.png',
 
-        width: 200,
-        height: 200,
+        width: 300,
+        height: 300,
       ),
     );
   }
 
   Widget _textFieldUsername(){
     return Container(
+      
       margin: EdgeInsets.symmetric(horizontal: 50, vertical:10),
       decoration: BoxDecoration(
         color: MyColors.secondaryColor,
@@ -78,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
         controller: _con.usernameController,
         keyboardType: TextInputType.name,
         decoration: InputDecoration(
-          hintText: 'Correo Electronico',
+          hintText: 'Usuario',
           border: InputBorder.none,
           contentPadding: EdgeInsets.all(15),
           hintStyle: TextStyle(

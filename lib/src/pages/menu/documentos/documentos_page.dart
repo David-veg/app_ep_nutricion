@@ -1,22 +1,20 @@
 import 'package:app_nutricion_ep/src/models/solicitudes.dart';
+import 'package:app_nutricion_ep/src/pages/menu/documentos/documento_controller.dart';
 import 'package:app_nutricion_ep/src/pages/menu/validarsoliadmin/list_val_solicitudesController.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:app_nutricion_ep/src/pages/menu/solicitudes/list_solicitudes_controller.dart';
 import 'package:app_nutricion_ep/src/utils/constants/my_colors.dart';
-import 'package:app_nutricion_ep/src/provider/solicitudes_provider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-class List_solicitudesAdm extends StatefulWidget {
-  const List_solicitudesAdm({Key key}) : super(key: key);
+class List_Documentos extends StatefulWidget {
+  const List_Documentos({Key key}) : super(key: key);
 
   @override
-  State<List_solicitudesAdm> createState() => _List_solicitudesAdmState();
+  State<List_Documentos> createState() => _List_DocumentosState();
 }
 
-class _List_solicitudesAdmState extends State<List_solicitudesAdm> {
-  List_SolicitudesAdmController _con = new List_SolicitudesAdmController();
+class _List_DocumentosState extends State<List_Documentos> {
+  List_DocumentosController _con = new List_DocumentosController();
   @override
   void initState() {
     // TODO: implement initState
@@ -28,6 +26,8 @@ class _List_solicitudesAdmState extends State<List_solicitudesAdm> {
 
   @override
   Widget build(BuildContext context) {
+
+
     return DefaultTabController(
       length: _con.categoria?.length,
       child: Scaffold(
@@ -50,9 +50,12 @@ class _List_solicitudesAdmState extends State<List_solicitudesAdm> {
               }),
             ),
           ),
+          
         ),
+
         body: TabBarView(
-          children: _con.categoria.map((String category) {
+          children: 
+          _con.categoria.map((String category) {
             return _cardList(null);
           }).toList(),
         ),
@@ -60,7 +63,7 @@ class _List_solicitudesAdmState extends State<List_solicitudesAdm> {
     );
   }
 
-  Widget _filtro() {
+   Widget _filtro() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20),
       child: TextField(
@@ -80,7 +83,7 @@ class _List_solicitudesAdmState extends State<List_solicitudesAdm> {
             contentPadding: EdgeInsets.all(15)),
       ),
     );
-  }
+  } 
 
   Widget _cardList(Solicitud solicitud) {
     
@@ -89,68 +92,80 @@ class _List_solicitudesAdmState extends State<List_solicitudesAdm> {
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       child: Card(
         elevation: 3.0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        child: Stack(
-          children: [
-            Positioned(
-              child: Container(
-                height: 30,
-                width: MediaQuery.of(context).size.width * 1,
-                decoration: BoxDecoration(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15)
+          ),
+          child: Stack(
+            children: [
+              Positioned(
+                child: Container(
+                  height: 30,
+                  width: MediaQuery.of(context).size.width * 1,
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(15),
                       topRight: Radius.circular(15),
                     ),
-                    color: MyColors.primaryColor),
-                child: Container(
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  child: Text('Solicitud #2',
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.white,
-                          fontFamily: 'NimbusSans')),
+                    color: MyColors.primaryColor
+                  ),
+                  child: Container(
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    child: Text('Solicitud #2',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                      fontFamily: 'NimbusSans'
+                    )
+                    ),
+                    
+                  ),
                 ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 40, left: 20, right: 20),
-              child: Column(
-                children: [
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.symmetric(vertical: 5),
-                    width: double.infinity,
-                    child: Text(
-                      'nombre: jose david',
-                      style: TextStyle(fontSize: 13),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.symmetric(vertical: 5),
-                    width: double.infinity,
-                    child: Text(
-                      'Apellido: Vega Vgea',
-                      style: TextStyle(fontSize: 13),
-                      maxLines: 1,
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.symmetric(vertical: 5),
-                    width: double.infinity,
-                    child: Text(
-                      'Estado: Aceptado',
-                      style: TextStyle(fontSize: 13),
-                      maxLines: 2,
-                    ),
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+              Container(
+                margin: EdgeInsets.only(top:40, left: 20, right:20 ),
+                child: Column(
+                  children: [
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        margin: EdgeInsets.symmetric(vertical: 5),
+                        width: double.infinity,
+                        child: Text('nombre: jose david',
+                        style: TextStyle(
+                          fontSize: 13
+
+                         ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        margin: EdgeInsets.symmetric(vertical: 5),
+                        width: double.infinity,
+                        child: Text('Apellido: Vega Vgea',
+                        style: TextStyle(
+                          fontSize: 13
+
+                         ),
+                         maxLines: 1,
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        margin: EdgeInsets.symmetric(vertical: 5),
+                        width: double.infinity,
+                        child: Text('Estado: Aceptado',
+                        style: TextStyle(
+                          fontSize: 13
+
+                         ),
+                         maxLines: 2,
+                        ),
+                      ),
+                  ],
+                ),
+              )
+            ],
+          ),
       ),
     );
   }

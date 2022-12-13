@@ -1,6 +1,8 @@
+import 'package:app_nutricion_ep/src/pages/menu/documentos/documentos_page.dart';
 import 'package:app_nutricion_ep/src/pages/menu/solicitudes/list_solicitudes.dart';
 import 'package:app_nutricion_ep/src/pages/menu/validaciones/list_busc_solicitud.dart';
 import 'package:app_nutricion_ep/src/pages/menu/validarsoliadmin/list_val_solicitudes.dart';
+import 'package:app_nutricion_ep/src/pages/notificaciones/notificaciones.dart';
 import 'package:app_nutricion_ep/src/pages/roles/roles_page.dart';
 import 'package:flutter/material.dart';
 import 'package:app_nutricion_ep/src/pages/client/solicitudes/list/client_solicitudes_list_page.dart';
@@ -27,9 +29,11 @@ class _MyAppState extends State<MyApp> {
       initialRoute: 'login',
       routes: {
         'login': (BuildContext context) => LoginPage(),
-        'roles': (BuildContext context) => RolesPage(),
+        'roles': (BuildContext context) => Menu_Modulo_Estudiante(),
         'solicitudes': (BuildContext context) => List_solicitudes(),
         'solicitudesAdm': (BuildContext context) => List_solicitudesAdm(),
+        'notificaciones': (BuildContext context) => NotificacionesPage(),
+        'documentos': (BuildContext context) => List_Documentos(),
         'client/solicitudes/list': (BuildContext context) => ClientsSolicitudesPage(),
         /* '/menu/validaciones': (BuildContext context) => Bus_solicitud(),
         '/menu/solicitudes': (BuildContext context) => Val_solicitudes(),

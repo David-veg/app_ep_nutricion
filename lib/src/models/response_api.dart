@@ -15,7 +15,6 @@ class ResponseApi {
     this.error,
     this.success,
 
-
   });
 
 

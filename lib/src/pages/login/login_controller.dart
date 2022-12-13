@@ -48,7 +48,7 @@ class LoginController {
         // ignore: use_build_context_synchronously
         Navigator.pushNamedAndRemoveUntil(context, usuario.sidebar[0].path , (route) => false);
       }   */  
-      Navigator.pushNamedAndRemoveUntil(context, 'solicitudesAdm', (route) => false);
+      Navigator.pushNamedAndRemoveUntil(context, 'roles', (route) => false);
     } else {
       MySnackbar.show(context, responseApi.message);
     }

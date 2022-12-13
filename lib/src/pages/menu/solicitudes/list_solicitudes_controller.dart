@@ -10,7 +10,7 @@ class List_SolicitudesController {
   UsersProvaider usersProvaider = new UsersProvaider();
   Usuario usuario;
 
-  List<String> categoria = ['Solicitudes Enviadas', 'Validar Solicitudes'];
+  List<String> categoria = ['Listado de documentos'];
 
   Future init(BuildContext context) async {
     this.context = context;
