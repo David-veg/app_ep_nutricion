@@ -1,6 +1,7 @@
 import 'package:app_nutricion_ep/src/pages/menu/documentos/documentos_page.dart';
 import 'package:app_nutricion_ep/src/pages/menu/solicitudes/list_solicitudes.dart';
-import 'package:app_nutricion_ep/src/pages/menu/validaciones/list_busc_solicitud.dart';
+
+import 'package:app_nutricion_ep/src/pages/menu/validaciones/list_busc_solicitud_val.dart';
 import 'package:app_nutricion_ep/src/pages/menu/validarsoliadmin/list_val_solicitudes.dart';
 import 'package:app_nutricion_ep/src/pages/notificaciones/notificaciones.dart';
 import 'package:app_nutricion_ep/src/pages/roles/roles_page.dart';
@@ -34,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         'solicitudesAdm': (BuildContext context) => List_solicitudesAdm(),
         'notificaciones': (BuildContext context) => NotificacionesPage(),
         'documentos': (BuildContext context) => List_Documentos(),
-        'client/solicitudes/list': (BuildContext context) => ClientsSolicitudesPage(),
+        'validaciones': (BuildContext context) => List_solicitudes_val(),
         /* '/menu/validaciones': (BuildContext context) => Bus_solicitud(),
         '/menu/solicitudes': (BuildContext context) => Val_solicitudes(),
         '/menu/validarsoliadmin': (BuildContext context) => List_solicitudes(), */

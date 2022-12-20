@@ -32,8 +32,10 @@ class _List_DocumentosState extends State<List_Documentos> {
       length: _con.categoria?.length,
       child: Scaffold(
         appBar: PreferredSize(
+          
           preferredSize: Size.fromHeight(100),
           child: AppBar(
+            title: const Text('Solicitudes'),
             automaticallyImplyLeading: false,
             backgroundColor: Colors.black,
             /* leading:  */

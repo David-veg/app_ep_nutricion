@@ -24,15 +24,60 @@ class _UserPageState extends State<UserPage> {
     });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: _con.logout,
-          child: Text('Cerrar session'),
+   @override
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: const Text('Documentos'),
+          backgroundColor: Color.fromRGBO(2, 48, 82, 1),
         ),
+        
+        body: ListView(
+  children: const <Widget>[
+    
+    Card(
+      child: ListTile(
+        leading: Icon(Icons.folder),
+        title: Text('Nombre: Doc #1'),
+        subtitle: Text(
+          'Estudiante: Yeiser Avila'
+        ),
+        
+        isThreeLine: true,
       ),
-    );
-  }
+    ),
+    Card(
+      child: ListTile(
+        leading: FlutterLogo(size: 72.0),
+        title: Text('Nombre: Doc #2'),
+        subtitle: Text(
+          'Estudiante: Yeiser Avila '
+        ),
+        
+        isThreeLine: true,
+      ),
+    ),Card(
+      child: ListTile(
+        leading: FlutterLogo(size: 72.0),
+        title: Text('Nombre: Doc #3'),
+        subtitle: Text(
+          'Estudiante: Yeiser Avila'
+        ),
+        
+        isThreeLine: true,
+      ),
+    ),Card(
+      child: ListTile(
+        leading: FlutterLogo(size: 72.0),
+        title: Text('Nombre: Doc #4'),
+        subtitle: Text(
+          'Estudiante: Yeiser Avila'
+        ),
+        
+        isThreeLine: true,
+      ),
+    ),
+  ],
+)
+
+        );
 }

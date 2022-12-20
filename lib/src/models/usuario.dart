@@ -12,8 +12,7 @@ class Usuario {
   String idRol;
   String password;
   String idperson;
-  String image;
-  String sessionToken;
+
  
   
 
@@ -23,8 +22,7 @@ class Usuario {
     this.idRol,
     this.password,
     this.idperson,
-    this.image,
-    this.sessionToken,
+
     
   });
 
@@ -34,8 +32,7 @@ class Usuario {
         idRol: json["id_rol"],
         password: json["password"],
         idperson: json["idperson"],
-        image: json["image"],
-        sessionToken: json["session_token"],
+
         
       );
 
@@ -45,8 +42,7 @@ class Usuario {
         "id_rol": idRol,
         "password": password,
         "idperson": idperson,
-        "image": image,
-        "session_token": sessionToken,
+
         
       };
 }

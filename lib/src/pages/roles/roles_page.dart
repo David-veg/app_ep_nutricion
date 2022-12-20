@@ -1,5 +1,6 @@
 import 'package:app_nutricion_ep/src/pages/menu/documentos/documentos_page.dart';
 import 'package:app_nutricion_ep/src/pages/menu/solicitudes/list_solicitudes.dart';
+import 'package:app_nutricion_ep/src/pages/menu/validaciones/list_busc_solicitud_val.dart';
 import 'package:app_nutricion_ep/src/pages/notificaciones/notificaciones.dart';
 import 'package:app_nutricion_ep/src/pages/profile/perfil_page.dart';
 import 'package:app_nutricion_ep/src/pages/roles/roles_controller.dart';
@@ -31,35 +32,118 @@ class _Menu_Modulo_EstudianteState extends State<Menu_Modulo_Estudiante> {
         appBar: AppBar(
           title: const Text(''),
           backgroundColor: Color.fromRGBO(2, 48, 82, 1),
+          
         ),
+        
         drawer: const NavigationDrawer(),
-        body: ListView(
-          children: [
-            ListTile(
-              
-              title: Text('Solicitud'),
-              leading: Icon(Icons.dock_outlined),
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const List_solicitudes(),
-              )),
-            ),
-            ListTile(
-              
-              title: Text('Anexo'),
-              leading: Icon(Icons.dock_outlined),
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const List_Documentos(),
-              )),
-            ),
 
-          ],
+        body: Container(
+     
+          child: Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10,),
+            child: ListView(
+              children: [
+                 _imageBanner(),
+           
 
+                InkWell(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const NotificacionesPage(),
+                  )),
+                  child: Container(
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.amber),
+
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                  
+                    Icon(Icons.feed,size:50, color: Colors.black,),
+                    Text(
+                  'Solicitudes',
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                
+                  ],),
+                  ),
+                ),
+
+                SizedBox(height: 15,),
+
+                InkWell(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const UserPage(),
+                  )),
+                  child: Container(
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.amber),
+
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      
+                  
+                    Icon(Icons.folder,size:50, color: Colors.black,),
+                    Text(
+                  'Documento',
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                
+                  ],),
+                  ),
+                ),
+
+               SizedBox(height: 15,),
+
+                InkWell(
+                  
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const List_solicitudes_val(),
+                  )),
+                  child: Container(
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.amber),
+                    
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      
+                    Icon(Icons.share,size:50, color: Colors.black,),
+                    Text(
+                  'Validacion de Solicitudes',
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                
+                  ],),
+                  ),
+                ),
+               
+ 
+              ],
+
+              ),
           ),
+        ),
+
+        
 
         );
+
+
+        
       
 }
 
+ Widget _imageBanner(){
+    return Container(
+      
+      margin: const EdgeInsets.only(top: 0, bottom:0),
+      child: Image.asset(
+        'assets/images/herramientas.png',
+
+        width: 250,
+        height: 250,
+        
+      ),
+    );
+  }
 class NavigationDrawer extends StatefulWidget {
   const NavigationDrawer({Key key}) : super(key: key);
 
@@ -103,15 +187,15 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                 CircleAvatar(
                   radius: 52,
                   backgroundImage: NetworkImage(
-                      'https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper.png'),
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4nS_1whXtTAkZ0-p6Anp-d8NaK5nBDzEFqXQKDpjx-Bd7bfGx'),
                 ),
                 SizedBox(height: 12),
                 Text(
-                  'Yeiser Avila',
+                  'Yeiser Avila Medina',
                   style: TextStyle(fontSize: 12, color: Colors.white),
                 ),
                 Text(
-                  'yeiser.avila@upue.edu.pe',
+                  'yeiseravila@upeu.edu.pe',
                   style: TextStyle(fontSize: 12, color: Colors.white),
                 )
               ],

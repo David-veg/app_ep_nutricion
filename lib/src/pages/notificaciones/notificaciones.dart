@@ -23,14 +23,31 @@ class _NotificacionesPageState extends State<NotificacionesPage> {
     });
   }
 
-  @override
-  Widget build(BuildContext context)=> Scaffold(
-    appBar: AppBar(
-      title: const Text('Notificaciones'),
-      backgroundColor: Color.fromRGBO(2, 48, 82, 1),
+   @override
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: const Text(''),
+          backgroundColor: Color.fromRGBO(2, 48, 82, 1),
+        ),
+        
+        body: ListView(
+  children: const <Widget>[
+    
+    Card(
+      child: ListTile(
+        leading: Icon(Icons.feed),
+        title: Text('Nombre: Yeiser Avila'),
+        subtitle: Text(
+          'fecha practicas: 12/20/2022'
+        ),
+        
+        isThreeLine: true,
+      ),
     ),
+  ],
+)
 
-  );
+        );
 }
 
 /* {
